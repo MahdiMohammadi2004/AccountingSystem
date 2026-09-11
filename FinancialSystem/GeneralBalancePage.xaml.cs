@@ -54,7 +54,7 @@ namespace FinancialSystem
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"خطا در بارگذاری داده‌ها: {ex.Message}", "خطا", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Error loading data: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -64,17 +64,17 @@ namespace FinancialSystem
             {
                 if (!dpTransactionDate.SelectedDate.HasValue)
                 {
-                    MessageBox.Show("لطفاً تاریخ را انتخاب کنید", "خطا", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show("Please select a date", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
                     return;
                 }
 
                 if (!double.TryParse(txtAmount.Text, out double amount))
                 {
-                    MessageBox.Show("مبلغ وارد شده معتبر نیست", "خطا", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show("Invalid amount entered", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
                     return;
                 }
 
-                string transactionType = ((ComboBoxItem)cmbTransactionType.SelectedItem).Content.ToString() == "آمد" ? "Income" : "Expense";
+                string transactionType = ((ComboBoxItem)cmbTransactionType.SelectedItem).Content.ToString() == "Income" ? "Income" : "Expense";
 
                 using (var connection = new SqliteConnection(DatabaseHelper.ConnectionString))
                 {
@@ -94,7 +94,7 @@ namespace FinancialSystem
                     cmd.ExecuteNonQuery();
                 }
 
-                MessageBox.Show("معامله با موفقیت ثبت شد", "موفق", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Transaction added successfully", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
                 
                 // Clear form
                 txtAmount.Clear();
@@ -106,7 +106,7 @@ namespace FinancialSystem
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"خطا در ثبت معامله: {ex.Message}", "خطا", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Error adding transaction: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }

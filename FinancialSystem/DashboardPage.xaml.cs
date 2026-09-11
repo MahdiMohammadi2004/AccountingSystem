@@ -78,7 +78,7 @@ namespace FinancialSystem
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"خطا در بارگذاری داده‌ها: {ex.Message}", "خطا", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Error loading data: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -119,7 +119,7 @@ namespace FinancialSystem
             }
             else
             {
-                MessageBox.Show("لطفاً تاریخ شروع و پایان را انتخاب کنید", "خطا", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Please select start and end dates", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
     }

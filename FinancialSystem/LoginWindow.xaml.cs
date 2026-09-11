@@ -18,7 +18,7 @@ namespace FinancialSystem
 
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
-                lblError.Text = "لطفاً نام کاربری و رمز عبور را وارد کنید";
+                lblError.Text = "Please enter username and password";
                 return;
             }
 
@@ -30,7 +30,7 @@ namespace FinancialSystem
             }
             else
             {
-                lblError.Text = "نام کاربری یا رمز عبور اشتباه است";
+                lblError.Text = "Invalid username or password";
             }
         }
 

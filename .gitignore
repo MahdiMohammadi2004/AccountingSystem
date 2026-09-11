@@ -1,29 +1,60 @@
 ```
-# Build results
+# Build artifacts
 bin/
 obj/
-out/
+*.exe
+*.dll
+*.pdb
+*.userprefs
+*.cache
+*.suo
+*.user
+*.aps
+*.ncb
+*.ilk
+*.iobj
+*.ipdb
+*.tlog
+*.res
+*.metagen
+*.wrn
+*.xml
+*.log
+*.tmp
 
-# User-specific files
+# Dependencies
+packages/
+node_modules/
+
+# IDE
 .vs/
-.vstest/
+.vshost.exe
+.vshost.exe.manifest
+.vscode/
+*.userprefs
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Configuration
 *.user
 *.userosscache
-*.suo
-*.csproj.user
+*.sln.docstates
 
-# Environment
-.env
-.env.local
-*.env.*
+# Publish
+publish/
+app.publish/
+
+# Temporary files
+*.tmp
+*.temp
+*.cache
 
 # Logs
 *.log
 
-# OS generated files
-.DS_Store
-Thumbs.db
-
-# Dependency cache
-packages-microsoft-prod.deb
+# User-specific files
+.vsconfig
 ```

@@ -1,93 +1,27 @@
 <Page x:Class="FinancialSystem.ExpensesPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      Title="مصارف گمرک و ترانسپورت">
-    <ScrollViewer VerticalScrollBarVisibility="Auto">
-        <Grid Margin="20">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            
-            <TextBlock Grid.Row="0" Text="ثبت مصارف گمرک و ترانسپورت" FontSize="24" FontWeight="Bold" 
-                       Margin="0,0,0,20" HorizontalAlignment="Center"/>
-            
-            <Border Grid.Row="1" Background="White" CornerRadius="10" Padding="20" Margin="0,0,0,20">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
-                    
-                    <TextBlock Grid.Row="0" Grid.Column="0" Text="انتخاب محموله:" Margin="0,0,0,5"/>
-                    <ComboBox x:Name="cmbShipments" Grid.Row="1" Grid.Column="0" Margin="0,0,0,10"/>
-                    
-                    <TextBlock Grid.Row="0" Grid.Column="1" Text="نوع مصرف:" Margin="0,0,0,5"/>
-                    <ComboBox x:Name="cmbExpenseType" Grid.Row="1" Grid.Column="1" Margin="0,0,0,10">
-                        <ComboBoxItem Content="حقوق گمرکی"/>
-                        <ComboBoxItem Content="مالیات"/>
-                        <ComboBoxItem Content="هزینه ترخیص"/>
-                        <ComboBoxItem Content="هزینه اسناد"/>
-                        <ComboBoxItem Content="هزینه بازرسی"/>
-                        <ComboBoxItem Content="کرایه ترانسپورت"/>
-                        <ComboBoxItem Content="هزینه مسیر"/>
-                        <ComboBoxItem Content="هزینه بارگیری"/>
-                        <ComboBoxItem Content="هزینه تخلیه"/>
-                        <ComboBoxItem Content="هزینه انبار"/>
-                        <ComboBoxItem Content="هزینه مرزی"/>
-                        <ComboBoxItem Content="هزینه جوالی"/>
-                        <ComboBoxItem Content="هزینه کارگر"/>
-                        <ComboBoxItem Content="سایر مصارف"/>
-                    </ComboBox>
-                    
-                    <TextBlock Grid.Row="2" Grid.Column="0" Text="تاریخ:" Margin="0,0,0,5"/>
-                    <DatePicker x:Name="dpExpenseDate" Grid.Row="3" Grid.Column="0" Margin="0,0,0,10"/>
-                    
-                    <TextBlock Grid.Row="2" Grid.Column="1" Text="مبلغ:" Margin="0,0,0,5"/>
-                    <TextBox x:Name="txtAmount" Grid.Row="3" Grid.Column="1" Margin="0,0,0,10"/>
-                    
-                    <TextBlock Grid.Row="4" Grid.Column="0" Text="واحد پول:" Margin="0,0,0,5"/>
-                    <TextBox x:Name="txtCurrency" Grid.Row="5" Grid.Column="0" Margin="0,0,0,10" Text="AFN"/>
-                    
-                    <TextBlock Grid.Row="4" Grid.Column="1" Text="پرداخت از حساب:" Margin="0,0,0,5"/>
-                    <TextBox x:Name="txtPaidFrom" Grid.Row="5" Grid.Column="1" Margin="0,0,0,10"/>
-                    
-                    <TextBlock Grid.Row="6" Grid.Column="0" Text="پرداخت به:" Margin="0,0,0,5"/>
-                    <TextBox x:Name="txtPaidTo" Grid.Row="7" Grid.Column="0" Margin="0,0,0,10"/>
-                    
-                    <TextBlock Grid.Row="6" Grid.Column="1" Text="شماره رسید:" Margin="0,0,0,5"/>
-                    <TextBox x:Name="txtReceiptNumber" Grid.Row="7" Grid.Column="1" Margin="0,0,0,10"/>
-                    
-                    <Button Grid.Row="7" Grid.Column="0" Content="ثبت مصرف" Width="120" Height="35" 
-                            Click="BtnAddExpense_Click" HorizontalAlignment="Left"
-                            Background="#E74C3C" Foreground="White" BorderThickness="0"/>
-                </Grid>
-            </Border>
-            
-            <Border Grid.Row="2" Background="White" CornerRadius="10" Padding="20">
-                <DataGrid x:Name="dgExpenses" AutoGenerateColumns="False" 
-                          CanUserAddRows="False" IsReadOnly="True">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="تاریخ" Binding="{Binding ExpenseDate}" Width="100"/>
-                        <DataGridTextColumn Header="نوع مصرف" Binding="{Binding ExpenseType}" Width="150"/>
-                        <DataGridTextColumn Header="مبلغ" Binding="{Binding Amount}" Width="100"/>
-                        <DataGridTextColumn Header="واحد پول" Binding="{Binding Currency}" Width="80"/>
-                        <DataGridTextColumn Header="پرداخت به" Binding="{Binding PaidTo}" Width="150"/>
-                        <DataGridTextColumn Header="شماره رسید" Binding="{Binding ReceiptNumber}" Width="100"/>
-                    </DataGrid.Columns>
-                </DataGrid>
-            </Border>
-        </Grid>
-    </ScrollViewer>
+      Title="Customs Expenses">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <TextBlock Grid.Row="0" Text="Customs and Transport Expenses" FontSize="24" FontWeight="Bold" 
+                   Margin="0,0,0,20" HorizontalAlignment="Center"/>
+        
+        <DataGrid Grid.Row="1" x:Name="dgExpenses" AutoGenerateColumns="False" 
+                  CanUserAddRows="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Date" Binding="{Binding ExpenseDate}" Width="100"/>
+                <DataGridTextColumn Header="Type" Binding="{Binding ExpenseType}" Width="150"/>
+                <DataGridTextColumn Header="Amount" Binding="{Binding Amount}" Width="100"/>
+                <DataGridTextColumn Header="Currency" Binding="{Binding Currency}" Width="80"/>
+                <DataGridTextColumn Header="Paid To" Binding="{Binding PaidTo}" Width="150"/>
+                <DataGridTextColumn Header="Receipt No" Binding="{Binding ReceiptNumber}" Width="100"/>
+                <DataGridTextColumn Header="Details" Binding="{Binding Details}" Width="200"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
 </Page>

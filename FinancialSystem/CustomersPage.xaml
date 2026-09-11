@@ -1,121 +1,25 @@
 <Page x:Class="FinancialSystem.CustomersPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      Title="حساب مشتریان">
+      Title="Customers">
     <Grid Margin="20">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="300"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
         
-        <!-- Customer List -->
-        <Border Grid.Column="0" Background="White" CornerRadius="10" Padding="20" Margin="0,0,10,0">
-            <DockPanel>
-                <TextBlock Text="مشتریان" FontSize="18" FontWeight="Bold" 
-                           DockPanel.Dock="Top" Margin="0,0,0,10" HorizontalAlignment="Center"/>
-                
-                <Button Content="افزودن مشتری جدید" DockPanel.Dock="Top" 
-                        Click="BtnAddCustomer_Click" Margin="0,0,0,10"
-                        Background="#3498DB" Foreground="White" BorderThickness="0"/>
-                
-                <DataGrid x:Name="dgCustomers" AutoGenerateColumns="False" 
-                          CanUserAddRows="False" SelectionChanged="DgCustomers_SelectionChanged">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="کد" Binding="{Binding CustomerCode}" Width="50"/>
-                        <DataGridTextColumn Header="نام" Binding="{Binding FirstName}" Width="100"/>
-                        <DataGridTextColumn Header="نام خانوادگی" Binding="{Binding LastName}" Width="100"/>
-                    </DataGrid.Columns>
-                </DataGrid>
-            </DockPanel>
-        </Border>
+        <TextBlock Grid.Row="0" Text="Customer Accounts" FontSize="24" FontWeight="Bold" 
+                   Margin="0,0,0,20" HorizontalAlignment="Center"/>
         
-        <!-- Customer Details and Transactions -->
-        <Border Grid.Column="1" Background="White" CornerRadius="10" Padding="20" Margin="10,0,0,0">
-            <ScrollViewer VerticalScrollBarVisibility="Auto">
-                <StackPanel>
-                    <TextBlock x:Name="txtCustomerTitle" Text="جزئیات مشتری" FontSize="18" FontWeight="Bold" 
-                               Margin="0,0,0,10" HorizontalAlignment="Center"/>
-                    
-                    <!-- Customer Info Form -->
-                    <Grid Margin="0,0,0,20">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
-                        
-                        <TextBlock Grid.Row="0" Grid.Column="0" Text="کد مشتری:" Margin="0,0,0,5"/>
-                        <TextBox x:Name="txtCustomerCode" Grid.Row="1" Grid.Column="0" Margin="0,0,0,10"/>
-                        
-                        <TextBlock Grid.Row="0" Grid.Column="1" Text="نام:" Margin="0,0,0,5"/>
-                        <TextBox x:Name="txtFirstName" Grid.Row="1" Grid.Column="1" Margin="0,0,0,10"/>
-                        
-                        <TextBlock Grid.Row="2" Grid.Column="0" Text="نام خانوادگی:" Margin="0,0,0,5"/>
-                        <TextBox x:Name="txtLastName" Grid.Row="3" Grid.Column="0" Margin="0,0,0,10"/>
-                        
-                        <TextBlock Grid.Row="2" Grid.Column="1" Text="شماره تماس:" Margin="0,0,0,5"/>
-                        <TextBox x:Name="txtPhoneNumber" Grid.Row="3" Grid.Column="1" Margin="0,0,0,10"/>
-                        
-                        <TextBlock Grid.Row="4" Grid.Column="0" Text="آدرس:" Margin="0,0,0,5"/>
-                        <TextBox x:Name="txtAddress" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,0,10"/>
-                        
-                        <Button Grid.Row="5" Grid.Column="1" Content="ذخیره اطلاعات" Width="120" Height="30" 
-                                Click="BtnSaveCustomer_Click" HorizontalAlignment="Right"
-                                Background="#27AE60" Foreground="White" BorderThickness="0"/>
-                    </Grid>
-                    
-                    <TextBlock Text="معاملات مشتری" FontSize="16" FontWeight="Bold" Margin="0,10,0,10"/>
-                    
-                    <!-- Transaction Form -->
-                    <Grid Margin="0,0,0,10">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
-                        
-                        <TextBlock Grid.Row="0" Grid.Column="0" Text="تاریخ:" Margin="0,0,0,5"/>
-                        <DatePicker x:Name="dpTransactionDate" Grid.Row="1" Grid.Column="0" Margin="0,0,0,10"/>
-                        
-                        <TextBlock Grid.Row="0" Grid.Column="1" Text="مبلغ:" Margin="0,0,0,5"/>
-                        <TextBox x:Name="txtTransactionAmount" Grid.Row="1" Grid.Column="1" Margin="0,0,0,10"/>
-                        
-                        <TextBlock Grid.Row="2" Grid.Column="0" Text="تعداد:" Margin="0,0,0,5"/>
-                        <TextBox x:Name="txtQuantity" Grid.Row="3" Grid.Column="0" Margin="0,0,0,10"/>
-                        
-                        <TextBlock Grid.Row="2" Grid.Column="1" Text="قیمت:" Margin="0,0,0,5"/>
-                        <TextBox x:Name="txtPrice" Grid.Row="3" Grid.Column="1" Margin="0,0,0,10"/>
-                        
-                        <Button Grid.Row="3" Grid.Column="0" Content="ثبت معامله" Width="120" Height="30" 
-                                Click="BtnAddTransaction_Click" HorizontalAlignment="Left"
-                                Background="#3498DB" Foreground="White" BorderThickness="0"/>
-                    </Grid>
-                    
-                    <!-- Transactions List -->
-                    <DataGrid x:Name="dgCustomerTransactions" AutoGenerateColumns="False" 
-                              CanUserAddRows="False" IsReadOnly="True" Height="200">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="تاریخ" Binding="{Binding Date}" Width="100"/>
-                            <DataGridTextColumn Header="تفصیلات" Binding="{Binding Details}" Width="150"/>
-                            <DataGridTextColumn Header="تعداد" Binding="{Binding Quantity}" Width="60"/>
-                            <DataGridTextColumn Header="قیمت" Binding="{Binding Price}" Width="80"/>
-                            <DataGridTextColumn Header="مبلغ" Binding="{Binding Amount}" Width="100"/>
-                            <DataGridTextColumn Header="بیلانس" Binding="{Binding Balance}" Width="100"/>
-                        </DataGrid.Columns>
-                    </DataGrid>
-                </StackPanel>
-            </ScrollViewer>
-        </Border>
+        <DataGrid Grid.Row="1" x:Name="dgCustomers" AutoGenerateColumns="False" 
+                  CanUserAddRows="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Code" Binding="{Binding CustomerCode}" Width="80"/>
+                <DataGridTextColumn Header="First Name" Binding="{Binding FirstName}" Width="120"/>
+                <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}" Width="120"/>
+                <DataGridTextColumn Header="Phone" Binding="{Binding PhoneNumber}" Width="120"/>
+                <DataGridTextColumn Header="Address" Binding="{Binding Address}" Width="200"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Page>
