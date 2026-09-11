@@ -1,0 +1,29 @@
+```
+# Build results
+bin/
+obj/
+out/
+
+# User-specific files
+.vs/
+.vstest/
+*.user
+*.userosscache
+*.suo
+*.csproj.user
+
+# Environment
+.env
+.env.local
+*.env.*
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Dependency cache
+packages-microsoft-prod.deb
+```
