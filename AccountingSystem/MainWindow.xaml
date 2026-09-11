@@ -1,12 +1,29 @@
-﻿<Window x:Class="AccountingSystem.MainWindow"
+﻿<Window x:Class="FinancialSystem.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:AccountingSystem"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="سیستم مدیریت مالی و حسابداری" Height="700" Width="1200"
+        WindowState="Maximized"
+        Background="#F5F5F5">
     <Grid>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <!-- Menu -->
+        <Menu Grid.Row="0" Background="#333">
+            <MenuItem Header="داشبورد" Click="Dashboard_Click" Foreground="White" FontSize="14"/>
+            <MenuItem Header="بیلانس عمومی" Click="GeneralBalance_Click" Foreground="White" FontSize="14"/>
+            <MenuItem Header="روزنامه‌چه" Click="Journal_Click" Foreground="White" FontSize="14"/>
+            <MenuItem Header="حساب مشتریان" Click="Customers_Click" Foreground="White" FontSize="14"/>
+            <MenuItem Header="ترانسپورت و گمرک" Click="Shipments_Click" Foreground="White" FontSize="14"/>
+            <MenuItem Header="گزارش‌ها" Click="Reports_Click" Foreground="White" FontSize="14"/>
+            <MenuItem Header="چاپ" Click="Print_Click" Foreground="White" FontSize="14"/>
+            <MenuItem Header="بک‌آپ" Click="Backup_Click" Foreground="White" FontSize="14"/>
+            <MenuItem Header="خروج" Click="Exit_Click" Foreground="White" FontSize="14" HorizontalAlignment="Right"/>
+        </Menu>
+        
+        <!-- Content Area -->
+        <Frame x:Name="MainFrame" Grid.Row="1" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

@@ -1,7 +1,7 @@
-﻿<Application x:Class="AccountingSystem.App"
+﻿<Application x:Class="FinancialSystem.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:AccountingSystem"
+             xmlns:local="clr-namespace:FinancialSystem"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
          
