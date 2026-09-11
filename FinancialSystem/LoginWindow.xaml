@@ -1,0 +1,34 @@
+<Window x:Class="FinancialSystem.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ورود به سیستم" Height="400" Width="350"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <TextBlock Grid.Row="0" Text="سیستم مدیریت مالی و حسابداری" 
+                   FontSize="18" FontWeight="Bold" 
+                   HorizontalAlignment="Center" Margin="0,0,0,20"/>
+        
+        <TextBlock Grid.Row="1" Text="نام کاربری:" Margin="0,0,0,5"/>
+        <TextBox Grid.Row="2" x:Name="txtUsername" Height="30" Margin="0,0,0,15"/>
+        
+        <TextBlock Grid.Row="3" Text="رمز عبور:" Margin="0,0,0,5"/>
+        <PasswordBox Grid.Row="4" x:Name="txtPassword" Height="30" Margin="0,0,0,15"/>
+        
+        <Button Grid.Row="5" Content="ورود" Height="35" 
+                Click="BtnLogin_Click" HorizontalAlignment="Center"
+                Width="150"/>
+        
+        <TextBlock Grid.Row="6" x:Name="lblError" Foreground="Red" 
+                   HorizontalAlignment="Center" Margin="0,10,0,0"/>
+    </Grid>
+</Window>

@@ -1,0 +1,82 @@
+<Page x:Class="FinancialSystem.TransportPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="ترانسپورت و گمرک">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <TextBlock Grid.Row="0" Text="ثبت محموله جدید" FontSize="24" FontWeight="Bold" 
+                       Margin="0,0,0,20" HorizontalAlignment="Center"/>
+            
+            <Border Grid.Row="1" Background="White" CornerRadius="10" Padding="20" Margin="0,0,0,20">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="شماره محموله:" Margin="0,0,0,5"/>
+                    <TextBox x:Name="txtShipmentNumber" Grid.Row="1" Grid.Column="0" Margin="0,0,0,10"/>
+                    
+                    <TextBlock Grid.Row="0" Grid.Column="1" Text="تاریخ ارسال:" Margin="0,0,0,5"/>
+                    <DatePicker x:Name="dpSendDate" Grid.Row="1" Grid.Column="1" Margin="0,0,0,10"/>
+                    
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="کشور مبدأ:" Margin="0,0,0,5"/>
+                    <TextBox x:Name="txtOriginCountry" Grid.Row="3" Grid.Column="0" Margin="0,0,0,10"/>
+                    
+                    <TextBlock Grid.Row="2" Grid.Column="1" Text="شهر مبدأ:" Margin="0,0,0,5"/>
+                    <TextBox x:Name="txtOriginCity" Grid.Row="3" Grid.Column="1" Margin="0,0,0,10"/>
+                    
+                    <TextBlock Grid.Row="4" Grid.Column="0" Text="کشور مقصد:" Margin="0,0,0,5"/>
+                    <TextBox x:Name="txtDestinationCountry" Grid.Row="5" Grid.Column="0" Margin="0,0,0,10"/>
+                    
+                    <TextBlock Grid.Row="4" Grid.Column="1" Text="شهر مقصد:" Margin="0,0,0,5"/>
+                    <TextBox x:Name="txtDestinationCity" Grid.Row="5" Grid.Column="1" Margin="0,0,0,10"/>
+                    
+                    <TextBlock Grid.Row="6" Grid.Column="0" Text="شرکت ترانسپورتی:" Margin="0,0,0,5"/>
+                    <TextBox x:Name="txtTransportCompany" Grid.Row="7" Grid.Column="0" Margin="0,0,0,10"/>
+                    
+                    <TextBlock Grid.Row="6" Grid.Column="1" Text="شماره موتر:" Margin="0,0,0,5"/>
+                    <TextBox x:Name="txtVehicleNumber" Grid.Row="7" Grid.Column="1" Margin="0,0,0,10"/>
+                    
+                    <TextBlock Grid.Row="8" Grid.Column="0" Text="راننده:" Margin="0,0,0,5"/>
+                    <TextBox x:Name="txtDriverName" Grid.Row="9" Grid.Column="0" Margin="0,0,0,10"/>
+                    
+                    <Button Grid.Row="9" Grid.Column="1" Content="ثبت محموله" Width="120" Height="35" 
+                            Click="BtnAddShipment_Click" HorizontalAlignment="Left"
+                            Background="#27AE60" Foreground="White" BorderThickness="0"/>
+                </Grid>
+            </Border>
+            
+            <Border Grid.Row="2" Background="White" CornerRadius="10" Padding="20">
+                <DataGrid x:Name="dgShipments" AutoGenerateColumns="False" 
+                          CanUserAddRows="False" IsReadOnly="True">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="شماره محموله" Binding="{Binding ShipmentNumber}" Width="100"/>
+                        <DataGridTextColumn Header="مبدأ" Binding="{Binding Origin}" Width="150"/>
+                        <DataGridTextColumn Header="مقصد" Binding="{Binding Destination}" Width="150"/>
+                        <DataGridTextColumn Header="تاریخ ارسال" Binding="{Binding SendDate}" Width="100"/>
+                        <DataGridTextColumn Header="وضعیت" Binding="{Binding Status}" Width="100"/>
+                        <DataGridTextColumn Header="شرکت" Binding="{Binding TransportCompany}" Width="120"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Border>
+        </Grid>
+    </ScrollViewer>
+</Page>

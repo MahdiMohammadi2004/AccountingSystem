@@ -1,0 +1,74 @@
+<Page x:Class="FinancialSystem.GeneralBalancePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="بیلانس عمومی">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <TextBlock Grid.Row="0" Text="بیلانس عمومی" FontSize="24" FontWeight="Bold" 
+                   Margin="0,0,0,20" HorizontalAlignment="Center"/>
+        
+        <!-- Add Transaction Form -->
+        <Border Grid.Row="1" Background="White" CornerRadius="10" Padding="20" Margin="0,0,0,20">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="تاریخ:" Margin="0,0,0,5"/>
+                <DatePicker x:Name="dpTransactionDate" Grid.Row="1" Grid.Column="0" Margin="0,0,0,10"/>
+                
+                <TextBlock Grid.Row="0" Grid.Column="1" Text="نوع معامله:" Margin="0,0,0,5"/>
+                <ComboBox x:Name="cmbTransactionType" Grid.Row="1" Grid.Column="1" Margin="0,0,0,10">
+                    <ComboBoxItem Content="آمد" IsSelected="True"/>
+                    <ComboBoxItem Content="رفت"/>
+                </ComboBox>
+                
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="مبلغ:" Margin="0,0,0,5"/>
+                <TextBox x:Name="txtAmount" Grid.Row="3" Grid.Column="0" Margin="0,0,0,10"/>
+                
+                <TextBlock Grid.Row="2" Grid.Column="1" Text="حساب مربوطه:" Margin="0,0,0,5"/>
+                <TextBox x:Name="txtAccountName" Grid.Row="3" Grid.Column="1" Margin="0,0,0,10"/>
+                
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="شماره سند:" Margin="0,0,0,5"/>
+                <TextBox x:Name="txtDocumentNumber" Grid.Row="5" Grid.Column="0" Margin="0,0,0,10"/>
+                
+                <TextBlock Grid.Row="4" Grid.Column="1" Text="تفصیلات:" Margin="0,0,0,5"/>
+                <TextBox x:Name="txtDetails" Grid.Row="5" Grid.Column="1" Margin="0,0,0,10"/>
+                
+                <Button Grid.Row="6" Grid.Column="0" Content="ثبت معامله" Width="120" Height="35" 
+                        Click="BtnAddTransaction_Click" HorizontalAlignment="Left" 
+                        Background="#27AE60" Foreground="White" BorderThickness="0"/>
+            </Grid>
+        </Border>
+        
+        <!-- Transactions List -->
+        <Border Grid.Row="2" Background="White" CornerRadius="10" Padding="20">
+            <DataGrid x:Name="dgTransactions" AutoGenerateColumns="False" 
+                      CanUserAddRows="False" IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="تاریخ" Binding="{Binding TransactionDate}" Width="100"/>
+                    <DataGridTextColumn Header="تفصیلات" Binding="{Binding Details}" Width="200"/>
+                    <DataGridTextColumn Header="نوع" Binding="{Binding Type}" Width="80"/>
+                    <DataGridTextColumn Header="مبلغ" Binding="{Binding Amount}" Width="100"/>
+                    <DataGridTextColumn Header="حساب" Binding="{Binding AccountName}" Width="120"/>
+                    <DataGridTextColumn Header="شماره سند" Binding="{Binding DocumentNumber}" Width="100"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+    </Grid>
+</Page>

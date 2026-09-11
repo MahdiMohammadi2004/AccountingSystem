@@ -1,0 +1,27 @@
+<Page x:Class="FinancialSystem.JournalPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="روزنامه‌چه">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <TextBlock Grid.Row="0" Text="روزنامه‌چه معاملات مالی" FontSize="24" FontWeight="Bold" 
+                   Margin="0,0,0,20" HorizontalAlignment="Center"/>
+        
+        <DataGrid Grid.Row="1" x:Name="dgJournal" AutoGenerateColumns="False" 
+                  CanUserAddRows="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="تاریخ" Binding="{Binding Date}" Width="100"/>
+                <DataGridTextColumn Header="تفصیلات" Binding="{Binding Details}" Width="250"/>
+                <DataGridTextColumn Header="آمد" Binding="{Binding Income}" Width="100"/>
+                <DataGridTextColumn Header="رفت" Binding="{Binding Expense}" Width="100"/>
+                <DataGridTextColumn Header="بیلانس" Binding="{Binding Balance}" Width="100"/>
+                <DataGridTextColumn Header="شماره سند" Binding="{Binding DocumentNumber}" Width="100"/>
+                <DataGridTextColumn Header="حساب" Binding="{Binding AccountName}" Width="150"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>
