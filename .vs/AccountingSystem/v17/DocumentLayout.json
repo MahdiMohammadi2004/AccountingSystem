@@ -1,19 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\PC\\Desktop\\AccountingSystem\\",
+  "WorkspaceRootPath": "D:\\AccountingSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PC\\Desktop\\AccountingSystem\\AccountingSystem\\Class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AccountingSystem\\Class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PC\\AppData\\Local\\Temp\\.vsdbgsrc\\0d0dd643ee7d1f41eca430e1d56ad561405d3519a6ebc325acde53f4178ee5da\\SqliteDataReader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
     {
-      "Orientation": 1,
+      "Orientation": 0,
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedHeight": 225,
+          "DockedWidth": 200,
           "SelectedChildIndex": 6,
           "Children": [
             {
@@ -43,13 +42,13 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Class1.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\AccountingSystem\\AccountingSystem\\Class1.cs",
-              "RelativeDocumentMoniker": "AccountingSystem\\Class1.cs",
-              "ToolTip": "C:\\Users\\PC\\Desktop\\AccountingSystem\\AccountingSystem\\Class1.cs",
-              "RelativeToolTip": "AccountingSystem\\Class1.cs",
+              "Title": "SqliteDataReader.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\AppData\\Local\\Temp\\.vsdbgsrc\\0d0dd643ee7d1f41eca430e1d56ad561405d3519a6ebc325acde53f4178ee5da\\SqliteDataReader.cs",
+              "ToolTip": "C:\\Users\\PC\\AppData\\Local\\Temp\\.vsdbgsrc\\0d0dd643ee7d1f41eca430e1d56ad561405d3519a6ebc325acde53f4178ee5da\\SqliteDataReader.cs [Read Only]",
+              "ViewState": "AgIAABwAAAAAAAAAAADgvyYAAAAEAAAAAQAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-11T07:17:39.017Z"
+              "WhenOpened": "2026-09-11T12:34:26.273Z",
+              "EditorCaption": " [Read Only]"
             }
           ]
         }

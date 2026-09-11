@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PC\\Desktop\\AccountingSystem\\AccountingSystem\\AccountingSystem.csproj": {}
+    "D:\\AccountingSystem\\AccountingSystem\\AccountingSystem.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PC\\Desktop\\AccountingSystem\\AccountingSystem\\AccountingSystem.csproj": {
+    "D:\\AccountingSystem\\AccountingSystem\\AccountingSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PC\\Desktop\\AccountingSystem\\AccountingSystem\\AccountingSystem.csproj",
+        "projectUniqueName": "D:\\AccountingSystem\\AccountingSystem\\AccountingSystem.csproj",
         "projectName": "AccountingSystem",
-        "projectPath": "C:\\Users\\PC\\Desktop\\AccountingSystem\\AccountingSystem\\AccountingSystem.csproj",
+        "projectPath": "D:\\AccountingSystem\\AccountingSystem\\AccountingSystem.csproj",
         "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PC\\Desktop\\AccountingSystem\\AccountingSystem\\obj\\",
+        "outputPath": "D:\\AccountingSystem\\AccountingSystem\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -23,7 +23,7 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net9.0-windows"
+          "net8.0-windows"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -31,8 +31,8 @@
           "https://package-mirror.liara.ir/repository/nuget/index.json": {}
         },
         "frameworks": {
-          "net9.0-windows7.0": {
-            "targetAlias": "net9.0-windows",
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows",
             "projectReferences": {}
           }
         },
@@ -49,8 +49,14 @@
         "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
-        "net9.0-windows7.0": {
-          "targetAlias": "net9.0-windows",
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "Microsoft.Data.Sqlite": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -62,6 +68,20 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
+              "version": "[8.0.28, 8.0.28]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.win-x64",
+              "version": "[8.0.28, 8.0.28]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
+              "version": "[8.0.28, 8.0.28]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -71,6 +91,11 @@
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.315/PortableRuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win-x64": {
+          "#import": []
         }
       }
     }
